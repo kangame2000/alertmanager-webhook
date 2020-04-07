@@ -17,6 +17,7 @@ def firing_msg(alert_json):
         message = message + f" - summary: {alert_json['annotations']['summary']}\n"
     if 'description' in alert_json['annotations'] and alert_json['annotations']:
         message = message + f" - description: {alert_json['annotations']['description']}\n"
+    message = message + " Message: "  f"{alert_json['annotations']['message']}\n"
     return message
 
 def resolved_msg(alert_json):
